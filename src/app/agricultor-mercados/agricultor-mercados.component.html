@@ -1,0 +1,82 @@
+<div class="navbar">
+    <img src="LOGO1.png" alt="AgroFuturo Logo" height="50" width="50"/>
+    <nav>
+        <a href="agricultor-home">Inicio</a>
+        <a href="agricultor-mercados">Mercados</a>
+        <a href="agricultores-grupos">Grupos</a>
+        <a href="agricultores-empresas">Empresas</a>
+        <a href="agricultores-ayuda">Ayuda</a>
+    </nav>
+    <div class="profile">
+        <img src="https://storage.googleapis.com/a1aa/image/iJFjOfkWbYQqGKtzrJ8TmukRkKz5c7E1c4wcWgChoQ7RQv4JA.jpg" alt="User Profile" height="40" width="40"/>
+        <a href="/agricultores-perfil" style="color: white;">Mi Perfil</a>
+    </div>
+</div>
+<div class="banner">
+    <h1>MERCADOS</h1>
+    <p>Accede a los mercados globales y conecta con compradores internacionales</p>
+</div>
+<div class="welcome">
+    <h2>Busca Productos!</h2>
+</div>
+<div class="background">
+    <div class="form-container">
+        <h1>Registrar Productos</h1>
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>ID Producto</mat-label>
+                <input matInput formControlName="hidProducto" readonly>
+                <mat-error *ngIf="form.controls['hidProducto'].hasError('required') && form.controls['hidProducto'].touched">
+                    El ID de producto es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Nombre de Producto</mat-label>
+                <input matInput placeholder="Nombre de Producto" formControlName="hnombreProducto">
+                <mat-error *ngIf="form.controls['hnombreProducto'].hasError('required') && form.controls['hnombreProducto'].touched">
+                    El nombre de producto es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Descripcion del Producto</mat-label>
+                <input matInput placeholder="Descripcion del Producto" formControlName="hdescripcionProducto">
+                <mat-error *ngIf="form.controls['hdescripcionProducto'].hasError('required') && form.controls['hdescripcionProducto'].touched">
+                    La descripción del producto es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Precio</mat-label>
+                <input matInput placeholder="Precio del Producto" formControlName="hprecioProducto">
+                <mat-error *ngIf="form.controls['hprecioProducto'].hasError('required') && form.controls['hprecioProducto'].touched">
+                    El precio del producto es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Agricultores</mat-label>
+                <mat-select formControlName="hagricultor">
+                    <mat-option *ngFor="let user of listaAgricultores" [value]="user.idAgricultor">{{user.nombreAgricultor}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['hagricultor'].hasError('required') && form.controls['hagricultor'].touched">
+                    El Agricultor es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <div class="button-container">
+                <button mat-flat-button color="primary" style="background-color: #28a745;">Registrar</button>
+            </div>
+
+            <div class="button-container">
+                <button mat-flat-button color="primary" [routerLink]="['/productos']" style="background-color: #28a745;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

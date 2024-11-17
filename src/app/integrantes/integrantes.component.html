@@ -1,0 +1,9 @@
+<div class="integrantes-container">
+    <h1>Integrantes del Grupo</h1>
+    <ul>
+      <li *ngFor="let integrante of integrantes">
+        <h3>{{ integrante.nombre }}</h3>
+        <p>{{ integrante.rol }}</p>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,112 @@
+<div class="navbar">
+    <img src="LOGO1.png" alt="AgroFuturo Logo" height="50" width="50"/>
+    <nav>
+        <a href="agricultor-home">Inicio</a>
+        <a href="agricultor-mercados">Mercados</a>
+        <a href="agricultores-grupos">Grupos</a>
+        <a href="agricultores-empresas">Empresas</a>
+        <a href="agricultores-ayuda">Ayuda</a>
+    </nav>
+    <div class="profile">
+        <img src="https://storage.googleapis.com/a1aa/image/iJFjOfkWbYQqGKtzrJ8TmukRkKz5c7E1c4wcWgChoQ7RQv4JA.jpg" alt="User Profile" height="40" width="40"/>
+        <a href="/agricultores-perfil" style="color: white;">Mi Perfil</a>
+    </div>
+</div>
+<div class="banner">
+    <h1>EMPRESAS</h1>
+    <p>Conéctate con empresas y forma alianzas estratégicas</p>
+</div>
+<div class="welcome">
+    <h2>Registrar Grupo Empresa Agricultor</h2>
+</div>
+<div class="background">
+    <div class="form-container">
+        <h1>Registrar Grupo Empresa Agricultor</h1>
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>ID Solicitud</mat-label>
+                <input matInput formControlName="hidSolicitudAgricultorEmpresa" readonly>
+                <mat-error *ngIf="form.controls['hidSolicitudAgricultorEmpresa'].hasError('required') && form.controls['hidSolicitudAgricultorEmpresa'].touched">
+                    El ID de solicitud es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <div class="input-field">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Fecha Solicitud</mat-label>
+                    <input matInput [matDatepicker]="hpicker"[min]="today" [matDatepickerFilter]="myFilter" formControlName="hfechaSolicitud">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="hpicker"></mat-datepicker-toggle>
+                    <mat-datepicker #hpicker></mat-datepicker>
+                    <mat-error *ngIf="form.get('hfechaSolicitud')?.hasError('required')">
+                        Las fechas son obligatorias.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            
+            <mat-form-field>
+                <mat-label>Estado Solicitud</mat-label>
+                <mat-select formControlName="hestadoSolicitud">
+                    <mat-option *ngFor="let estado of listaEstadoSolicitud" [value]="estado.value">{{estado.viewValue}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['hestadoSolicitud'].hasError('required') && form.controls['hestadoSolicitud'].touched">
+                    El Estado es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/> 
+
+            <div class="input-field">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Fecha Respuesta</mat-label>
+                    <input matInput [matDatepicker]="picker"[min]="today" [matDatepickerFilter]="myFilter" formControlName="hfechaRespuesta">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="form.get('hfechaRespuesta')?.hasError('required')">
+                        Las fechas son obligatorias.
+                    </mat-error>
+                </mat-form-field>
+            </div> 
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Comentarios</mat-label>
+                <input matInput placeholder="Comentarios de la solicitud" formControlName="hcomentario">
+                <mat-error *ngIf="form.controls['hcomentario'].hasError('required') && form.controls['hcomentario'].touched">
+                    La Solicitud es requerida.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Empresa</mat-label>
+                <mat-select formControlName="hempresa">
+                    <mat-option *ngFor="let user of listaEmpresas" [value]="user.idEmpresa">{{user.nombreEmpresa}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['hempresa'].hasError('required') && form.controls['hempresa'].touched">
+                    La Empresa es requerida.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Agricultor</mat-label>
+                <mat-select formControlName="hagricultor">
+                    <mat-option *ngFor="let user of listaAgricultores" [value]="user.idAgricultor">{{user.nombreAgricultor}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['hagricultor'].hasError('required') && form.controls['hagricultor'].touched">
+                    El Agricultor es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <div class="button-container">
+                <button mat-flat-button color="primary" style="background-color: #0d31e4;">Registrar</button>
+            </div>
+
+            <div class="button-container">
+                <button mat-flat-button color="primary" [routerLink]="['/solicitudagricultor']" style="background-color: #0d31e4;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

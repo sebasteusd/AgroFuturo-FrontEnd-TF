@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFuturo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <div class="navbar">
+        <img src="LOGO1.png" alt="AgroFuturo Logo" height="50" width="50"/>
+        <nav>
+            <a href="agricultor-home">Inicio</a>
+            <a href="agricultor-mercados">Mercados</a>
+            <a href="agricultores-grupos">Grupos</a>
+            <a href="agricultores-empresas">Empresas</a>
+            <a href="agricultores-ayuda">Ayuda</a>
+        </nav>
+        <div class="profile">
+            <img src="https://storage.googleapis.com/a1aa/image/iJFjOfkWbYQqGKtzrJ8TmukRkKz5c7E1c4wcWgChoQ7RQv4JA.jpg" alt="User Profile" height="40" width="40"/>
+            <a href="/agricultores-perfil" style="color: white;">Mi Perfil</a>
+        </div>
+    </div>
+    <div class="banner">
+        <h1>AGROFUTURO</h1>
+        <p>Conectar a los agricultores con los mercados globales</p>
+    </div>
+    <div class="welcome">
+        <h2>Hola, {{ username }}!</h2>
+    </div>
+    <div class="content">
+        <div class="news">
+            <h2>NOTICIAS</h2>
+            <div class="main-news">
+                <img src="https://storage.googleapis.com/a1aa/image/bf8LBfIiQnvBVEmllafVTNJoSvCftklCrdBpa8fM3eNLJoX8E.jpg" alt="News Image" height="100" width="100"/>
+                <div class="details">
+                    <div class="category">NEGOCIOS</div>
+                    <h3>Entrevista con Pedro Goldschmidt...</h3>
+                    <p>(Aparicio) La producción de semillas en el Perú avanza a pesar de las limitaciones...</p>
+                    <a class="read-more" routerLink="/noticia">Ver Noticia</a>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="updates">
+            <h2>NOVEDADES</h2>
+            <div class="update-item">
+                <h3>Conozca el programa #PROAgricultor de Syngenta (VIDEO)</h3>
+                <img src="https://storage.googleapis.com/a1aa/image/98QYRTBFC8KPKhxAvge2cB5Utfo8LIp9TKeECiGXfRbXC6FPB.jpg" alt="Update Image" height="200" width="300"/>
+            </div>
+            <div class="update-item">
+                <h3>Importancia de una marca de calidad para el mango peruano - Lic. Francisco Seva (VIDEO)</h3>
+                <img src="https://storage.googleapis.com/a1aa/image/98QYRTBFC8KPKhxAvge2cB5Utfo8LIp9TKeECiGXfRbXC6FPB.jpg" alt="Update Image" height="200" width="300"/>
+                <a class="read-more" routerLink="/video">VER MÁS VIDEOS</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

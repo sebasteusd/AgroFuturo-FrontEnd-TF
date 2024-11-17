@@ -1,0 +1,13 @@
+<div class="reporte-container" *ngIf="reporteData.length > 0">
+    <h2>Agricultores con más productos</h2>
+    <ul>
+      <li *ngFor="let item of reporteData">
+        <span class="nombre">{{ item.nombre }}</span>
+        <span class="cantidad">{{ item.cantidadProductos }} productos</span>
+      </li>
+    </ul>
+    
+  </div>
+  <div class="reporte-container no-data" *ngIf="reporteData.length === 0">
+    <p>No hay datos disponibles.</p>
+  </div>

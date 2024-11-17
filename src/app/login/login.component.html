@@ -1,0 +1,17 @@
+<div class="login-container">
+    <h2>BIENVENIDO</h2>
+    <form (ngSubmit)="onLogin()">
+      <div class="input-group">
+        <input type="username" id="username" [(ngModel)]="username" name="username" placeholder="Usuario" required>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
+      </div>
+      <button type="submit">INICIAR SESIÓN</button>
+    </form>
+    <p>¿No tienes cuenta? <button (click)="showRegister()">REGÍSTRATE</button></p>
+    <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
+    <button (click)="goback()">Volver</button> <!-- Botón para regresar -->
+  </div>
+  
+  

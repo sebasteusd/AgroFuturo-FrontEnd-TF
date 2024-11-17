@@ -1,0 +1,106 @@
+<div class="navbar">
+    <img src="LOGO1.png" alt="AgroFuturo Logo" height="50" width="50"/>
+    <nav>
+        <a href="agricultor-home">Inicio</a>
+        <a href="agricultor-mercados">Mercados</a>
+        <a href="agricultores-grupos">Grupos</a>
+        <a href="agricultores-empresas">Empresas</a>
+        <a href="agricultores-ayuda">Ayuda</a>
+    </nav>
+    <div class="profile">
+        <img src="https://storage.googleapis.com/a1aa/image/iJFjOfkWbYQqGKtzrJ8TmukRkKz5c7E1c4wcWgChoQ7RQv4JA.jpg" alt="User Profile" height="40" width="40"/>
+        <a href="/agricultores-perfil" style="color: white;">Mi Perfil</a>
+    </div>
+</div>
+<div class="banner">
+    <h1>GRUPOS</h1>
+    <p>Conéctate con otros agricultores y forma grupos de trabajo</p>
+</div>
+<div class="welcome">
+    <h2>Registrar Grupo Agricultores</h2>
+</div>
+<div class="background">
+    <div class="form-container">
+        <h1>Registrar Grupo Agricultores</h1>
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>ID Grupo</mat-label>
+                <input matInput formControlName="hidGrupo" readonly>
+                <mat-error *ngIf="form.controls['hidGrupo'].hasError('required') && form.controls['hidGrupo'].touched">
+                    El ID de grupo es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+            
+            <mat-form-field class="example-full-width">
+                <mat-label>Nombre de Grupo</mat-label>
+                <input matInput placeholder="Nombre de Grupo" formControlName="hnombreGrupo">
+                <mat-error *ngIf="form.controls['hnombreGrupo'].hasError('required') && form.controls['hnombreGrupo'].touched">
+                    El nombre de grupo es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Descripcion del Grupo</mat-label>
+                <input matInput placeholder="Descripcion del grupo" formControlName="hdescripcionGrupo">
+                <mat-error *ngIf="form.controls['hdescripcionGrupo'].hasError('required') && form.controls['hdescripcionGrupo'].touched">
+                    La descripción del grupo es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <div class="input-field">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Fecha Creacion</mat-label>
+                    <input matInput [matDatepicker]="picker" [min]="today" [matDatepickerFilter]="myFilter" formControlName="hfechaCreacion">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="form.get('hfechaCreacion')?.hasError('required')">
+                        Las fechas son obligatorias.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field>
+                <mat-label>Estado Grupo</mat-label>
+                <mat-select formControlName="hestadoGrupo">
+                    <mat-option *ngFor="let food of listaEstados" [value]="food.value">{{food.viewValue}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['hestadoGrupo'].hasError('required') && form.controls['hestadoGrupo'].touched">
+                    El Estado es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/> 
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Max Miembros</mat-label>
+                <input matInput placeholder="Max Miembros" formControlName="hmaxMiembros">
+                <mat-error *ngIf="form.controls['hmaxMiembros'].hasError('required') && form.controls['hmaxMiembros'].touched">
+                    El max. de miembros es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Agricultores</mat-label>
+                <mat-select formControlName="hagricultor">
+                    <mat-option *ngFor="let user of listaAgricultores" [value]="user.idAgricultor">{{user.nombreAgricultor}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['hagricultor'].hasError('required') && form.controls['hagricultor'].touched">
+                    El Agricultor es requerido.
+                </mat-error>
+            </mat-form-field>
+            <br/>
+
+            <div class="button-container">
+                <button mat-flat-button color="primary" style="background-color: #28a745;">Registrar</button>
+            </div>
+
+            <div class="button-container">
+                <button mat-flat-button color="primary" [routerLink]="['/grupoagricultor']" style="background-color: #28a745;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

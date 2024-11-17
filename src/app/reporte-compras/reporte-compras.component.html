@@ -1,0 +1,29 @@
+<div class="reporte-container">
+    <h2>Reporte de Compras</h2>
+    <form [formGroup]="form" (ngSubmit)="getCompras()">
+      <mat-form-field>
+        <mat-label>Fecha de Inicio</mat-label>
+        <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Fecha de Fin</mat-label>
+        <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Obtener Reporte</button>
+    </form>
+    <div *ngIf="compras.length > 0">
+      <h3>Total de Compras: {{ totalCompras | currency }}</h3>
+      <ul>
+        <li *ngFor="let compra of compras">
+          {{ compra.fechaCompra | date }} - {{ compra.total | currency }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="compras.length === 0">
+      <p>No hay compras en el rango de fechas seleccionado.</p>
+    </div>
+  </div>

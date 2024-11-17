@@ -1,0 +1,36 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('./assets/FONDO-LP.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    height: 100vh; /* Asegurar que abarca toda la altura de la ventana */
+  }
+  
+  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .form-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+  }
+  

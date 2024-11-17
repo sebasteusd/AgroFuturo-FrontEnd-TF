@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: #4A2C2A;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed; /* Hace que la navbar sea fija */
+    top: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que la navbar esté sobre otros elementos */
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.navbar nav a:hover {
+    background-color: #45a049;
+    border-radius: 4px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-right: 40px; /* Añadir margen derecho */
+}
+
+.profile img {
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.banner {
+    background-image: url('/AgroFuturo/public/FONDO-LP.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    width: 1200px;  /* Ancho fijo de 1200 píxeles */
+    height: 400px;  /* Altura fija de 400 píxeles */
+    max-width: 100%;  /* Para asegurar que no se desborde en pantallas más pequeñas */
+    margin: auto;  /* Centrar la imagen horizontalmente */
+    margin-top: 70px; /* Para evitar que la barra de navegación cubra el contenido */
+}
+
+.banner h1 {
+    font-size: 70px; /* Tamaño de fuente aumentado */
+    margin: 0;
+    color: white; /* Color de fuente cambiado a blanco */
+}
+
+.banner p {
+    font-size: 20px;
+}
+
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #372727;
+    color: white;
+    font-size: 2em;
+    padding: 20px 0;
+    margin: 0; /* Eliminación de márgenes para unir con la sección .content */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #3E2723;
+    color: white;
+    margin-top: 0; /* Para evitar que el contenido esté cubierto por la navbar fija y unir con .welcome */
+}
+
+.content h2 {
+    margin: 0;
+}
+
+.product-list-container {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.product-list-container h2 {
+    color: #4A2C2A;
+}
+
+.product-list-container .product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-list-container .product-item img {
+    height: 100px;
+    margin-right: 20px;
+}
+
+.product-list-container .product-item .details {
+    flex: 1;
+}
+
+.product-list-container .product-item .details h3 {
+    margin: 0;
+}
+
+.product-list-container .product-item .details p {
+    margin: 5px 0;
+}
+
+.product-list-container .product-item .details .category {
+    background-color: #FFEB3B;
+    color: #4A2C2A;
+    padding: 2px 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.product-list-container .product-item .details .read-more {
+    background-color: #4A2C2A;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.purchase-form-container {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}

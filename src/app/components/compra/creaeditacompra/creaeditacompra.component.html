@@ -1,0 +1,76 @@
+<div>
+    <div><h1>Registrar Compras</h1></div>
+    <div>
+        <form [formGroup]="form" (submit)="aceptar()">
+          <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>ID Compra</mat-label>
+            <input matInput formControlName="hidCompra" readonly>
+            <mat-error *ngIf="form.controls['hidCompra'].hasError('required') && form.controls['hidCompra'].touched">
+              El ID de la compra es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>Cantidad</mat-label>
+            <input matInput placeholder="Cantidad de la compra" formControlName="hcantidad">
+            <mat-error *ngIf="form.controls['hcantidad'].hasError('required') && form.controls['hcantidad'].touched">
+              La cantidad es requerida.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <div class="input-field">
+            <mat-form-field class="example-full-width">
+              <mat-label>Fecha</mat-label>
+              <input matInput [matDatepicker]="picker"[min]="today" [matDatepickerFilter]="myFilter" formControlName="hfechaCompra">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error *ngIf="form.get('hfechaCompra')?.hasError('required')">
+                Las fechas son obligatorias.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Total</mat-label>
+            <input matInput placeholder="Total de la compra" formControlName="htotal">
+            <mat-error *ngIf="form.controls['htotal'].hasError('required') && form.controls['htotal'].touched">
+              El total de la empresa es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Usuario</mat-label>
+            <mat-select formControlName="husuario">
+              <mat-option *ngFor="let user of listaUsuarios" [value]="user.idUsuario">{{user.username}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['husuario'].hasError('required') && form.controls['husuario'].touched">
+              El usuario es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Producto</mat-label>
+            <mat-select formControlName="hproducto">
+              <mat-option *ngFor="let user of listaProductos" [value]="user.idProducto">{{user.nombreProducto}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['hproducto'].hasError('required') && form.controls['hproducto'].touched">
+              El Producto es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <div class="button-container">
+            <button mat-flat-button color="primary" style="background-color: #0d31e4;">Registrar</button>
+        </div>
+
+        <div class="button-container">
+            <button mat-flat-button color="primary" [routerLink]="['/compras']" style="background-color: #0d31e4;" >Cancelar</button>
+        </div>
+        </form>
+    </div>
+</div>

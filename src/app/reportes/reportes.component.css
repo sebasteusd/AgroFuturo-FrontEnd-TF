@@ -1,0 +1,60 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor del reporte */
+.reporte-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del reporte */
+.reporte-container h2 {
+    text-align: center;
+    color: #4A2C2A;
+    margin-bottom: 20px;
+}
+
+/* Lista de agricultores */
+.reporte-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Elementos de la lista */
+.reporte-container ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Nombre del agricultor */
+.reporte-container ul li .nombre {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Cantidad de productos */
+.reporte-container ul li .cantidad {
+    background-color: #4A2C2A;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Mensaje cuando no hay datos */
+.reporte-container .no-data {
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+}

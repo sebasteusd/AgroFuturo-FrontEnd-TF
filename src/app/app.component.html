@@ -1,0 +1,139 @@
+<mat-toolbar class="custom-toolbar">
+  <!-- Ícono de hamburguesa que activa el menú principal -->
+  <button mat-icon-button [matMenuTriggerFor]="mainMenu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <!-- Botón que redirige a "home" --> 
+   <button mat-icon-button routerLink="home"> 
+    <mat-icon>home</mat-icon> 
+  </button>
+</mat-toolbar>
+
+<!-- Menú principal que contiene todos los submenús -->
+<mat-menu #mainMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="menuUsuario">
+    Usuario
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuRole">
+    Roles
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuAgricultor">
+    Agricultor
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuProducto">
+    Producto
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuEmpresa">
+    Empresa
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuCompra">
+    Compra
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuGrupoAgricultor">
+    Grupo Empresa Agricultor
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuSolicitudAgricultor">
+    Solicitud Agricultor Empresa
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="menuGrupazoAgricultor">
+    Grupo Agricultor
+  </button>
+  <button mat-menu-item routerLink="/reportes">
+    Reporte de Agricultor con mas Productos
+  </button>
+  <button mat-menu-item routerLink="/reporte-compras">
+    Reporte de Compras
+  </button>
+  <button mat-menu-item routerLink="/reporte-grupo">
+    Reporte de Grupo
+  </button>
+  <button mat-menu-item routerLink="/reporte-productos-agricultor">
+    Reporte de Productos por Agricultor
+  </button>
+  <button mat-menu-item routerLink="/reporte-compras-empresa">
+    Reporte de Compras por Empresa
+  </button>
+</mat-menu>
+
+<!-- Submenús individuales para cada sección -->
+<mat-menu #menuUsuario="matMenu">
+  <button mat-menu-item routerLink="/usuarios">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/usuarios/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuRole="matMenu">
+  <button mat-menu-item routerLink="/roles">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/roles/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuAgricultor="matMenu">
+  <button mat-menu-item routerLink="/agricultor">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/agricultor/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuProducto="matMenu">
+  <button mat-menu-item routerLink="/productos">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/productos/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuEmpresa="matMenu">
+  <button mat-menu-item routerLink="/empresas">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/empresas/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuCompra="matMenu">
+  <button mat-menu-item routerLink="/compras">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/compras/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuGrupoAgricultor="matMenu">
+  <button mat-menu-item routerLink="/grupoempresa">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/grupoempresa/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<mat-menu #menuSolicitudAgricultor="matMenu">
+  <button mat-menu-item routerLink="/solicitudagricultor">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/solicitudagricultor/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+<mat-menu #menuGrupazoAgricultor="matMenu">
+  <button mat-menu-item routerLink="/grupoagricultor">
+    <mat-icon>list_alt</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/grupoagricultor/nuevo">
+    <mat-icon>add_box</mat-icon> Registrar
+  </button>
+</mat-menu>
+
+<router-outlet></router-outlet>

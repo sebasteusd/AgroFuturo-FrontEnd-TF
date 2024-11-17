@@ -1,0 +1,120 @@
+.background {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-container {
+    background-color: #6F8B39;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #6F8B39;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+    margin-top: 300px; /* Ajusta el valor según tu preferencia */
+  }
+  
+  h2 {
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px; /* Ajusta el tamaño según tu preferencia */
+    font-weight: 300; /* Ajusta el grosor de la fuente, valores comunes son 100, 300, 400, 700, etc. */
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffff;
+  }
+  
+  input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #521D0A;
+    color: white;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #3e1506; /* Un poco más oscuro para el efecto hover */
+  }
+  
+  p {
+    color: #FFFFFF; /* Color del texto */
+    font-family: 'Poppins', sans-serif; 
+    margin-top: 10px;
+    font-weight: 300; /* Hacer la fuente más delgada */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  p button {
+    background-color: #3e1506;
+    border: none;
+    color: #FFFFFF; /* Cambiar el color del botón a dorado */
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  p button:hover {
+    color: #FFA500; /* Cambiar a un tono más oscuro al pasar el mouse */
+  }
+  
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block; /* Asegurar que el enlace sea un bloque para centrarlo */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

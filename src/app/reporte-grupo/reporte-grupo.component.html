@@ -1,0 +1,21 @@
+<div class="reporte-container">
+    <h2>Reporte de Grupo Empresa Agricultor</h2>
+    <form [formGroup]="form" (ngSubmit)="getAgricultores()">
+      <mat-form-field>
+        <mat-label>Seleccionar Grupo</mat-label>
+        <mat-select formControlName="grupo">
+          <mat-option *ngFor="let grupo of grupos" [value]="grupo.idGrupoEmpresaAgricultor">
+            {{ grupo.empresa.nombreEmpresa }} - {{ grupo.agricultor.nombreAgricultor }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Obtener Reporte</button>
+    </form>
+    <div *ngIf="selectedGroup">
+      <h3>Grupo: {{ selectedGroup.empresa.nombreEmpresa }} - {{ selectedGroup.agricultor.nombreAgricultor }}</h3>
+      <p>Total de Agricultores: {{ totalAgricultores }}</p>
+    </div>
+    <div *ngIf="!selectedGroup">
+      <p>Seleccione un grupo para ver el reporte.</p>
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+<div class="reporte-container">
+    <h2>Reporte de Productos por Agricultor</h2>
+    <form [formGroup]="form" (ngSubmit)="getProductos()">
+      <mat-form-field>
+        <mat-label>Seleccionar Agricultor</mat-label>
+        <mat-select formControlName="agricultor">
+          <mat-option *ngFor="let agricultor of agricultores" [value]="agricultor.idAgricultor">
+            {{ agricultor.nombreAgricultor }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Obtener Reporte</button>
+    </form>
+    <div *ngIf="selectedAgricultor">
+      <h3>Agricultor: {{ selectedAgricultor.nombreAgricultor }}</h3>
+      <table mat-table [dataSource]="productosAgricultor" class="mat-elevation-z8">
+        <ng-container matColumnDef="nombreProducto">
+          <th mat-header-cell *matHeaderCellDef> Nombre del Producto </th>
+          <td mat-cell *matCellDef="let producto"> {{producto.nombreProducto}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="descripcionProducto">
+          <th mat-header-cell *matHeaderCellDef> Descripción </th>
+          <td mat-cell *matCellDef="let producto"> {{producto.descripcionProducto}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="precioProducto">
+          <th mat-header-cell *matHeaderCellDef> Precio </th>
+          <td mat-cell *matCellDef="let producto"> {{producto.precioProducto | currency}} </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <div *ngIf="!selectedAgricultor">
+      <p>Seleccione un agricultor para ver el reporte.</p>
+    </div>
+  </div>

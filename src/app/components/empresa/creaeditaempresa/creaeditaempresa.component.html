@@ -1,0 +1,81 @@
+<div>
+    <div><h1>Registrar Empresa</h1></div>
+    <div>
+        <form [formGroup]="form" (submit)="aceptar()">
+          <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>ID Empresa</mat-label>
+            <input matInput formControlName="hidEmpresa" readonly>
+            <mat-error *ngIf="form.controls['hidEmpresa'].hasError('required') && form.controls['hidEmpresa'].touched">
+              El ID de la empresa es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>Nombre de Empresa</mat-label>
+            <input matInput placeholder="Nombre de Empresa" formControlName="hnombreEmpresa">
+            <mat-error *ngIf="form.controls['hnombreEmpresa'].hasError('required') && form.controls['hnombreEmpresa'].touched">
+              El nombre de la empresa es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Correo de Empresa</mat-label>
+            <input matInput placeholder="Correo de Empresa" formControlName="hcorreoEmpresa">
+            <mat-error *ngIf="form.controls['hcorreoEmpresa'].hasError('required') && form.controls['hcorreoEmpresa'].touched">
+              El correo de empresa es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Teléfono de Empresa</mat-label>
+            <input matInput placeholder="Teléfono de Empresa" formControlName="htelefonoEmpresa">
+            <mat-error *ngIf="form.controls['htelefonoEmpresa'].hasError('required') && form.controls['htelefonoEmpresa'].touched">
+              El teléfono de la empresa es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Ubicación de Empresa</mat-label>
+            <input matInput placeholder="Ubicación de Empresa" formControlName="hubicacionEmpresa">
+            <mat-error *ngIf="form.controls['hubicacionEmpresa'].hasError('required') && form.controls['hubicacionEmpresa'].touched">
+              La ubicación de la empresa es requerida.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <mat-form-field>
+            <mat-label>Tipo Empresa</mat-label>
+            <mat-select formControlName="htipoIndustria">
+              <mat-option *ngFor="let food of listaTipos" [value]="food.value">{{food.viewValue}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['htipoIndustria'].hasError('required') && form.controls['htipoIndustria'].touched">
+              El tipo es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/> 
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Usuario</mat-label>
+            <mat-select formControlName="husuario">
+              <mat-option *ngFor="let user of listaUsuarios" [value]="user.idUsuario">{{user.username}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['husuario'].hasError('required') && form.controls['husuario'].touched">
+              El usuario es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+
+          <div class="button-container">
+            <button mat-flat-button color="primary" style="background-color: #0d31e4;">Registrar</button>
+        </div>
+
+        <div class="button-container">
+            <button mat-flat-button color="primary" [routerLink]="['/empresas']" style="background-color: #0d31e4;" >Cancelar</button>
+        </div>
+        </form>
+    </div>
+</div>

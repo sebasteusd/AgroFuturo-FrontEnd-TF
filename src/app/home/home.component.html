@@ -1,0 +1,57 @@
+<div class="home">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a class="navbar-brand" href="#">AGROFUTURO</a>
+      <ul class="navbar-nav">
+        <li><a href="/login">Iniciar Sesión</a></li>
+        <li><a href="/integrantes">Integrantes</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="home-content">
+    <h1>Bienvenido a AgroFuturo</h1>
+    <p>Tu plataforma para conectar a agricultores y empresas.</p>
+    <div class="button-container">
+      <button (click)="scrollToSection('agricultores')">Soy Agricultor</button>
+      <button (click)="scrollToSection('empresas')">Soy Empresa</button>
+    </div>
+  </div>
+  <div class="features">
+    <div class="feature">
+      <i class="fas fa-seedling"></i>
+      <h3>Conexión Global</h3>
+      <p>Conecta con mercados globales y expande tu negocio.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-chart-line"></i>
+      <h3>Oportunidades de Crecimiento</h3>
+      <p>Accede a nuevas oportunidades y recursos para crecer.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-handshake"></i>
+      <h3>Colaboración Efectiva</h3>
+      <p>Colabora con otros agricultores y empresas para lograr más.</p>
+    </div>
+  </div>
+  <div class="info-sections">
+    <section id="agricultores">
+      <h2>Información para Agricultores</h2>
+      <p>Descubre cómo AgroFuturo puede ayudarte a conectar con mercados globales, acceder a recursos y colaborar con otros agricultores.</p>
+      <button (click)="toggleInfo('agricultores')">Más Información</button>
+      <div class="more-info" *ngIf="showAgricultoresInfo">
+        <p>AgroFuturo ofrece una plataforma integral para agricultores, permitiéndoles acceder a mercados globales, obtener recursos valiosos y colaborar con otros agricultores para mejorar sus prácticas y aumentar su productividad.</p>
+      </div>
+    </section>
+    <section id="empresas">
+      <h2>Información para Empresas</h2>
+      <p>Aprende cómo AgroFuturo puede ayudarte a encontrar proveedores confiables, acceder a nuevos mercados y colaborar con agricultores.</p>
+      <button (click)="toggleInfo('empresas')">Más Información</button>
+      <div class="more-info" *ngIf="showEmpresasInfo">
+        <p>AgroFuturo facilita a las empresas encontrar proveedores confiables, acceder a nuevos mercados y colaborar con agricultores para asegurar un suministro constante y de alta calidad de productos agrícolas.</p>
+      </div>
+    </section>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2024 AgroFuturo. Todos los derechos reservados.</p>
+  </footer>
+</div>

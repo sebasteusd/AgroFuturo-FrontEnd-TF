@@ -1,0 +1,84 @@
+<div class="background">
+    <div class="form-container">
+      <div><h1>Registrar</h1></div>
+      <div>
+        <form [formGroup]="form" (submit)="aceptar()">
+          <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>ID Usuario</mat-label>
+            <input matInput formControlName="hidUsuario" readonly>
+            <mat-error *ngIf="form.controls['hidUsuario'].hasError('required') && form.controls['hidUsuario'].touched">
+              El ID de usuario es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+          
+          <mat-form-field class="example-full-width">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput placeholder="Nombre de Usuario" formControlName="husername">
+            <mat-error *ngIf="form.controls['husername'].hasError('required') && form.controls['husername'].touched">
+              El nombre de usuario es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" placeholder="Contraseña" formControlName="hpassword">
+            <mat-error *ngIf="form.controls['hpassword'].hasError('required') && form.controls['hpassword'].touched">
+              La contraseña es requerida.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Nombre Completo</mat-label>
+            <input matInput placeholder="Nombre Completo" formControlName="hnombreUsuario">
+            <mat-error *ngIf="form.controls['hnombreUsuario'].hasError('required') && form.controls['hnombreUsuario'].touched">
+              El nombre completo es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Correo Electrónico</mat-label>
+            <input matInput placeholder="Correo Electrónico" formControlName="hcorreoUsuario">
+            <mat-error *ngIf="form.controls['hcorreoUsuario'].hasError('required') && form.controls['hcorreoUsuario'].touched">
+              El correo electrónico es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Teléfono</mat-label>
+            <input matInput placeholder="Teléfono" formControlName="htelefonoUsuario">
+            <mat-error *ngIf="form.controls['htelefonoUsuario'].hasError('required') && form.controls['htelefonoUsuario'].touched">
+              El teléfono es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Tipo de Usuario</mat-label>
+            <mat-select formControlName="htipoUsuario">
+              <mat-option value="agricultor">Agricultor</mat-option>
+              <mat-option value="empresa">Empresa</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['htipoUsuario'].hasError('required') && form.controls['htipoUsuario'].touched">
+              El tipo de usuario es requerido.
+            </mat-error>
+          </mat-form-field>
+          <br/>
+          
+          <br/>
+          <div class="button-container">
+            <button mat-flat-button color="primary" style="background-color: #0d31e4;">Registrar</button>
+          </div>
+  
+          <div class="button-container">
+            <button mat-flat-button color="primary" [routerLink]="['/login']" style="background-color: #0d31e4;">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

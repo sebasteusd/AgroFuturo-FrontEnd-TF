@@ -1,0 +1,74 @@
+.background {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-container {
+    background-color: #6F8B39;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px;
+    font-weight: 300;
+  }
+  
+  .mat-form-field {
+    margin-bottom: 20px;
+  }
+  
+  .mat-label {
+    color: #FFFFFF;
+  }
+  
+  input {
+    color: #FFFFFF;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #521D0A;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #3e1506;
+  }
+  
+  .button-container {
+    margin-bottom: 20px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
